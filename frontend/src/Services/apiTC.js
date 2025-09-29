@@ -2,7 +2,9 @@ import axios from "axios";
 
 export async function fetchTransportationCost(year){
     try{
-        const {data} = await axios.get(`http://localhost:4000/api/transportation-cost?year=${year}`)
+        const { data } = await axios.get(
+          `https://kpi-system-n6rb.onrender.com/api/transportation-cost?year=${year}`
+        );
         return data
     }
     catch(error){

@@ -3,7 +3,9 @@ const MAP_URL = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/maste
 const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
 export async function fetchShippingData(year,month,mode){
     try {
-        const {data} = await axios.get(`http://localhost:4000/api/shipping-time?year=${year}&month=${month}&mode=${mode}`)
+        const { data } = await axios.get(
+          `https://kpi-system-n6rb.onrender.com/api/shipping-time?year=${year}&month=${month}&mode=${mode}`
+        );
         return data
     }
     catch(error){
