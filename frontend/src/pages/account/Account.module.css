@@ -5,11 +5,13 @@ form {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.2);
 }
+
 h1 {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 4rem;
 }
+
 .formContainer {
   display: flex;
   align-items: center;
@@ -17,9 +19,8 @@ h1 {
   height: 100vh;
   width: 100vw;
 }
+
 .labelContainer {
-  /* display : flex;
-    justify-content : space-between; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.3rem;
@@ -28,26 +29,34 @@ h1 {
   align-items: center;
   position: relative;
 }
+
 .labelContainer label {
   font-size: 1.8rem;
 }
+
 .labelContainer input {
   height: 4rem;
   width: 27rem;
   border-radius: 0.5rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
+
 .buttonContainer {
   display: flex;
   justify-content: space-evenly;
   margin-top: 1.2rem;
 }
+
 .buttonContainer p {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
 .buttonContainer p span {
   text-decoration: underline;
 }
+
 button {
   background-color: orange;
   padding: 1rem 2.4rem;
@@ -58,37 +67,45 @@ button {
   outline: none;
   cursor: pointer;
 }
+
 .errortag {
   font-size: 1.5rem;
 }
+
 .loadingButton {
   opacity: 0.6 !important;
   cursor: not-allowed;
   pointer-events: none;
   transition: opacity 0.3s;
 }
+
+/* === Password Input + Eye Button Fix === */
 .inputWrapper {
   position: relative;
-  display: flex;
-  align-items: center;
   width: 100%;
 }
 
 .inputWrapper input {
   width: 100%;
-  padding-right: 40px;
+  height: 4rem;
+  padding: 0 1rem;
+  padding-right: 3rem; /* reserve clear space for eye button */
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
 
 .eyeButton {
   position: absolute;
-  right: -0.7rem;
+  right: 0.8rem;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
   color: gray;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  z-index: 2;
 }
 
 /* Phones (480px and below) */
@@ -114,6 +131,7 @@ button {
   .labelContainer input {
     width: 100%;
     height: 3.5rem;
+    padding-right: 1rem;
   }
 
   .buttonContainer {
@@ -131,10 +149,15 @@ button {
     padding: 0.8rem;
     width: 100%;
   }
+
+  .eyeButton {
+    display: none;
+    /* justify-content: flex-end; */
+  }
 }
 
-/* Tablets (768px and below) */
-@media screen and (min-width: 481) and (max-width: 768px) {
+/* Tablets (481px to 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
   form {
     width: 85vw;
     padding: 1.5rem;
