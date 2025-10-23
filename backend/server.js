@@ -20,12 +20,17 @@ const corsOptions = {
   origin: true,
 };
 
+
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+app.get('/', (req, res) => {
+  res.send('KPI Backend is running 🚀');
+});
 app.use("/api/auth", authRoutes);
 app.use("/api/shipments", shipmentRoutes);
 app.use("/api/perfect-order", perfectOrderRoutes);
