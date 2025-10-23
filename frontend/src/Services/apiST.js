@@ -1,6 +1,8 @@
 import axios from "axios";
 const MAP_URL = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
-const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
+// const COUNTRIES_URL = 'https://restcountries.com/v3.1/all';
+const COUNTRIES_URL = 'https://restcountries.com/v3.1/all?fields=name,flags';
+
 export async function fetchShippingData(year,month,mode){
     try {
         const { data } = await axios.get(
@@ -38,3 +40,4 @@ export async function fetchCountriesData() {
     throw new Error('Failed to fetch countries data');
   }
 }
+

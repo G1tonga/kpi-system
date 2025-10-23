@@ -18,6 +18,7 @@ function App() {
         <ProtectedRoute>
           <AppLayout/>
         </ProtectedRoute>
+       
       }>
         <Route path='/' element={<PerfectOrderRate/>}/>
         <Route path='/number-of-shipments' element={<NumberOfShipments/>}/>

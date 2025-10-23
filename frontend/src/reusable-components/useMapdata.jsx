@@ -11,6 +11,9 @@ function useMapdata(){
         queryKey: ['Countriesdata'],
         queryFn: fetchCountriesData,
       });
+      console.log('Countries data:', countries);
+      console.log('Map data:', mapdata);
+
       return{mapdata,countries,mapError,countriesError,isLoadingCountries,isLoadingMapData}
     
 }

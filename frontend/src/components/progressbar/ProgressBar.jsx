@@ -18,9 +18,10 @@ function ProgressBar({ className, data }) {
   const { filters, setFilters } = useDashboard();
   const mode = filters?.shippingtime.mode;
   const { isdarkmode } = useUI();
-  const filteredCountries = data?.filter((country) => {
-    return selectedCountries.includes(country.name.common);
-  });
+ const filteredCountries =
+  data?.filter((country) =>
+    selectedCountries.includes(country.name.common)
+  ) || [];
 
   function handleFiltersChange(section, key, value) {
     setFilters((prev) => ({
